@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexagram/screens/signup_screen.dart';
 
 class InitialPage extends StatefulWidget {
   const InitialPage({super.key});
@@ -67,8 +68,8 @@ class _InitialPageState extends State<InitialPage> {
                 ),
               ),
               onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignUpScreen()));
               },
               child: const Text(
                 'Sign In',
