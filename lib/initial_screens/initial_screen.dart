@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hexagram/screens/login_screen.dart';
-import 'package:hexagram/screens/signup_screen.dart';
+import 'package:hexagram/initial_screens/login_screen.dart';
+import 'package:hexagram/initial_screens/signup_screen.dart';
 
 class InitialPage extends StatefulWidget {
   const InitialPage({super.key});

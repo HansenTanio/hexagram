@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_button.dart';
 import 'package:hexagram/components/my_textfield.dart';
-import 'package:hexagram/screens/signup_screen.dart';
+import 'package:hexagram/initial_screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
