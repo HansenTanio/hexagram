@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_button.dart';
 import 'package:hexagram/components/my_textfield.dart';
+import 'package:hexagram/initial_screens/login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
@@ -10,7 +11,10 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  void userLogin() {}
+  void userSignUp() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => LoginScreen()));
+  }
 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
@@ -76,12 +80,35 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 20,
             ),
             MyButton(
-              onTap: userLogin,
+              onTap: userSignUp,
               buttonText: 'Sign Up',
             ),
             SizedBox(
               height: 20,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Already have an account?',
+                  style: TextStyle(fontSize: 16),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  },
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         )),
       ),
