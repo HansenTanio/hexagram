@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_button.dart';
 import 'package:hexagram/components/my_textfield.dart';
+import 'package:hexagram/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
@@ -120,8 +121,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.push(context,
-                    //     MaterialScreenRoute(builder: (context) => const SignUpScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SignUpScreen()));
                   },
                   child: const Text(
                     'Sign up',
