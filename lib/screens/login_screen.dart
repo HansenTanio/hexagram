@@ -106,6 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             MyButton(
               onTap: userLogin,
+              buttonText: 'Login',
             ),
             SizedBox(
               height: 20,
