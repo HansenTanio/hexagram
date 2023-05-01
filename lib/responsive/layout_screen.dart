@@ -12,11 +12,11 @@ class LayoutScreen extends StatefulWidget {
 
 class _LayoutScreenState extends State<LayoutScreen> {
   final List _body = [
-    const HomeScreen(testitle: "Home"),
-    const HomeScreen(testitle: "Search"),
-    const HomeScreen(testitle: "Add"),
-    const HomeScreen(testitle: "Profile"),
-    const HomeScreen(testitle: "Settings"),
+    const HomeScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
   ];
 
   int _currentIndex = 0;
@@ -30,8 +30,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      body: Center(
         child: _body[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
