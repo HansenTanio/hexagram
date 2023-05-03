@@ -31,13 +31,33 @@ class SearchScreen extends StatelessWidget {
                 ),
               ),
             ),
-            for (var i = 0; i < 25; i++)
+            for (var i = 0; i < 12; i++)
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   for (var j = 1; j < 5; j++)
                     MySearchPhoto(
-                      imageLink: 'lib/images/random-photos/${i + j}.jpg',
+                      imageLink: 'lib/images/random-photos/${4 * i + j}.jpg',
+                    ),
+                ],
+              ),
+            for (var i = 0; i < 12; i++)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  for (var j = 1; j < 5; j++)
+                    MySearchPhoto(
+                      imageLink: 'lib/images/random-photos/${4 * i + j}.jpg',
+                    ),
+                ],
+              ),
+            for (var i = 0; i < 12; i++)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  for (var j = 1; j < 5; j++)
+                    MySearchPhoto(
+                      imageLink: 'lib/images/random-photos/${4 * i + j}.jpg',
                     ),
                 ],
               ),
