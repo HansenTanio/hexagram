@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_avatar.dart';
+import 'package:hexagram/components/my_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,7 +21,6 @@ class HomeScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
-          child: Center(
         child: Column(
           children: [
             Row(
@@ -28,25 +28,61 @@ class HomeScreen extends StatelessWidget {
               children: const [
                 MyAvatar(
                   userName: 'Hansen',
-                  imageLink:
-                      'https://instagram.fkno4-1.fna.fbcdn.net/v/t51.2885-19/337861791_210298631694077_2635489641542819489_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fkno4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=STDkou2hLaMAX-mhX-X&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBh8dPnSpu_xvk3QxRK0pPtl50EXoKI90Ll74dyXaRIkg&oe=6454C8C6&_nc_sid=8fd12b',
+                  imagePath: 'lib/images/profile/Hansen Profile.jpg',
                 ),
                 MyAvatar(
                   userName: 'Louis',
-                  imageLink:
-                      'https://instagram.fkno4-1.fna.fbcdn.net/v/t51.2885-19/222049441_702333474448960_6152411283523384502_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fkno4-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=CLeLD51oUu4AX-_pbca&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCqCtZec7HQ2OiLohuYrhSA1TlR_X2ZI4fHEG7k-lNFrw&oe=645414D1&_nc_sid=8fd12b',
+                  imagePath: 'lib/images/profile/Louis Profile.jpg',
                 ),
                 MyAvatar(
                   userName: 'Michael',
-                  imageLink:
-                      'https://instagram.fkno4-1.fna.fbcdn.net/v/t51.2885-19/334705956_1738061126652463_1999795861026054169_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fkno4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=Q2jzqnzGFM4AX_dr8b-&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCt0gYxUQUcweCG8AL4aDWD1xpARl24k2Sn8tRN_T7STw&oe=64550390&_nc_sid=8fd12b',
+                  imagePath: 'lib/images/profile/Michael Profile.jpg',
                 ),
               ],
             ),
-            Text('Card Postingan')
+            MyCard(
+              accountName: 'Lisa',
+              account: '@lalalalisa_m',
+              profileImage: 'lib/images/profile/Lisa Profile.jpg',
+              postImage: 'lib/images/random-photos/6.jpg',
+              postTime: '20 min ago',
+              postDesc: 'Birthday week',
+            ),
+            MyCard(
+              accountName: 'New Jeans',
+              account: '@newjeans_official',
+              profileImage: 'lib/images/profile/New Jeans Profile.jpg',
+              postImage: 'lib/images/random-photos/29.jpg',
+              postTime: '35 min ago',
+              postDesc: 'NewJeans \'Zero\' Available Now',
+            ),
+            MyCard(
+              accountName: 'Toshiro Nishio',
+              account: '@libertywalk_toshi',
+              profileImage: 'lib/images/profile/Libertywalk Toshi Profile.jpg',
+              postImage: 'lib/images/random-photos/13.jpg',
+              postTime: '50 min ago',
+              postDesc: 'LB WORKS Ferrari F40 in Japan',
+            ),
+            MyCard(
+              accountName: 'Kitsune',
+              account: '@kitsunee.__',
+              profileImage: 'lib/images/profile/Kitsune Profile.jpg',
+              postImage: 'lib/images/random-photos/14.jpg',
+              postTime: '1 hour ago',
+              postDesc: '#Kitsune',
+            ),
+            MyCard(
+              accountName: 'JISOO',
+              account: '@sooyaaa__',
+              profileImage: 'lib/images/profile/Jisoo Profile.jpg',
+              postImage: 'lib/images/random-photos/7.jpg',
+              postTime: '2 hours ago',
+              postDesc: '久しぶりに日本でBLINKに会えて幸せでした！',
+            ),
           ],
         ),
-      )),
+      ),
     );
   }
 }

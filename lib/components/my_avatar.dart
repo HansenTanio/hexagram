@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class MyAvatar extends StatelessWidget {
-  final String imageLink;
+  final String imagePath;
   final String userName;
 
   const MyAvatar({
     super.key,
-    required this.imageLink,
+    required this.imagePath,
     required this.userName,
   });
 
@@ -16,14 +16,14 @@ class MyAvatar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
+        children: [
           CircleAvatar(
             backgroundImage: NetworkImage(
               'https://img.freepik.com/premium-vector/vertical-background-with-smooth-gradient-vector-illustration_522680-306.jpg',
             ),
             radius: 40,
             child: CircleAvatar(
-              backgroundImage: NetworkImage(imageLink),
+              backgroundImage: AssetImage(imagePath),
               radius: 35,
             ),
           ),

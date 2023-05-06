@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hexagram/components/my_searchphoto.dart';
+import 'package:hexagram/components/my_previewphoto.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
