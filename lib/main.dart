@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/initial_screens/initial_screen.dart';
 import 'package:hexagram/responsive/layout_screen.dart';
+import 'package:hexagram/screens/profile_screen.dart';
 import 'package:hexagram/screens/search_screen.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LayoutScreen(),
+      home: ProfileScreen(),
     );
   }
 }
