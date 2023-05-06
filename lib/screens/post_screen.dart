@@ -75,12 +75,13 @@ class _PostScreenState extends State<PostScreen> {
             ),
           ),
         ],
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         children: [
           Container(
-            height: 300,
-            child: Image.asset('lib/images/random-photos/1.jpg'),
+            height: 250,
+            child: Image.asset('lib/images/random-photos/10.jpg'),
           ),
           MyTextField(
             controller: descriptionController,

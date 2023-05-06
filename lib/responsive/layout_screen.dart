@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/screens/home_screen.dart';
+import 'package:hexagram/screens/post_screen.dart';
 import 'package:hexagram/screens/profile_screen.dart';
 import 'package:hexagram/screens/search_screen.dart';
 import 'package:hexagram/screens/settings_screen.dart';
@@ -17,7 +18,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
   final List _body = [
     const HomeScreen(),
     const SearchScreen(),
-    const HomeScreen(),
+    const PostScreen(),
     const ProfileScreen(),
     const SettingsScreen(),
   ];
