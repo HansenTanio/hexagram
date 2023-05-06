@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/screens/home_screen.dart';
 import 'package:hexagram/screens/search_screen.dart';
+import 'package:hexagram/screens/settings_screen.dart';
 
 class LayoutScreen extends StatefulWidget {
   LayoutScreen({
@@ -17,7 +18,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
     const SearchScreen(),
     const HomeScreen(),
     const HomeScreen(),
-    const HomeScreen(),
+    const SettingsScreen(),
   ];
 
   int _currentIndex = 0;
