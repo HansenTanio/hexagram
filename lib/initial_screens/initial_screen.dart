@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:hexagram/initial_screens/login_screen.dart';
 import 'package:hexagram/initial_screens/signup_screen.dart';
 
-class InitialPage extends StatefulWidget {
-  const InitialPage({super.key});
+class InitialScreen extends StatefulWidget {
+  const InitialScreen({super.key});
 
   @override
-  State<InitialPage> createState() => _InitialPageState();
+  State<InitialScreen> createState() => _InitialScreenState();
 }
 
-class _InitialPageState extends State<InitialPage> {
+class _InitialScreenState extends State<InitialScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +44,12 @@ class _InitialPageState extends State<InitialPage> {
                 ),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ),
+                );
               },
               child: const Text(
                 'Login',
@@ -69,8 +73,12 @@ class _InitialPageState extends State<InitialPage> {
                 ),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignUpScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SignUpScreen(),
+                  ),
+                );
               },
               child: const Text(
                 'Sign In',
