@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:hexagram/components/my_previewphoto.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -66,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                margin: EdgeInsets.all(40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -169,6 +170,40 @@ class ProfileScreen extends StatelessWidget {
                     Icon(Icons.more_horiz)
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/1.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/25.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/48.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/11.jpg'),
+                ],
+              ),
+              Row(
+                children: [
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/4.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/19.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/9.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/18.jpg'),
+                ],
+              ),
+              Row(
+                children: [
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/22.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/33.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/32.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/27.jpg'),
+                ],
+              ),
+              Row(
+                children: [
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/37.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/43.jpg'),
+                  MySearchPhoto(imageLink: 'lib/images/random-photos/47.jpg'),
+                ],
               ),
             ],
           ),
