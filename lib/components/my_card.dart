@@ -59,7 +59,7 @@ class MyCard extends StatelessWidget {
                     accountName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 20,
                     ),
                   ),
                   Text(
@@ -113,7 +113,6 @@ class MyCard extends StatelessWidget {
           Container(
             child: Text(
               postDesc,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
         ],
