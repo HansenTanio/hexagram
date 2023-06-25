@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/initial_screens/initial_screen.dart';
+import 'package:hexagram/provider/account_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => AccountProvider())],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

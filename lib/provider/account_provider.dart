@@ -41,7 +41,6 @@ class AccountProvider extends ChangeNotifier {
   set setData(val) {
     var tmp = json.encode(val);
     _data = json.decode(tmp);
-
     notifyListeners();
   }
 
