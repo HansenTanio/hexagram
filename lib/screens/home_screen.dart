@@ -35,8 +35,8 @@ class HomeScreen extends StatelessWidget {
                   imagePath: 'lib/images/profile/Louis Profile.jpg',
                 ),
                 MyAvatar(
-                  userName: 'Michael',
-                  imagePath: 'lib/images/profile/Michael Profile.jpg',
+                  userName: 'Victor',
+                  imagePath: 'lib/images/profile/Victor Profile.jpg',
                 ),
               ],
             ),
