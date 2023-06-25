@@ -3,7 +3,7 @@ import 'dart:convert';
 
 class AccountProvider extends ChangeNotifier {
   initialData() async {
-    setData = hansen;
+    setData = null;
   }
 
   final hansen = {
@@ -14,7 +14,7 @@ class AccountProvider extends ChangeNotifier {
         "username": "hansentanio33",
         "password": "hansen123",
       },
-    ]
+    ],
   };
   final louis = {
     "data": [

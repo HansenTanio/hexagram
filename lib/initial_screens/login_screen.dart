@@ -120,8 +120,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 prov.login(usernameController.text, passwordController.text);
                 if (prov.data == null) {
                   showDialog(
-                      context: context,
-                      builder: (context) => errorDialog(context));
+                    context: context,
+                    builder: (context) => errorDialog(context),
+                  );
                 } else {
                   Navigator.push(
                     context,
@@ -173,7 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
 errorDialog(BuildContext context) {
   return AlertDialog(
     title: const Text('Login Error!'),
-    content: const Text('Username or Password not valid!'),
+    content: const Text('Account not found'),
     actions: [
       TextButton(
         onPressed: () {

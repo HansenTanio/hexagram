@@ -11,11 +11,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  void userSignUp() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LoginScreen()));
-  }
-
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
@@ -80,7 +75,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 20,
             ),
             MyButton(
-              onTap: userSignUp,
+              onTap: () {
+                if (usernameController.text == '' ||
+                    passwordController.text == '' ||
+                    confirmController.text == '') {
+                  showDialog(
+                    context: context,
+                    builder: (context) =>
+                        errorDialog(context, 'Fill all textfield'),
+                  );
+                } else if (passwordController.text != confirmController.text) {
+                  showDialog(
+                    context: context,
+                    builder: (context) =>
+                        errorDialog(context, 'Password are not the same'),
+                  );
+                } 
+              },
               buttonText: 'Sign Up',
             ),
             SizedBox(
@@ -119,3 +130,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
+
+errorDialog(BuildContext context, String msg) {
+  return AlertDialog(
+    title: const Text('Sign Up Error!'),
+    content: Text(msg),
+    actions: [
+      TextButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: const Text('OK'),
+      )
+    ],
+  );
+}
+
