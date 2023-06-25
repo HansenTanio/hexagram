@@ -90,7 +90,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     builder: (context) =>
                         errorDialog(context, 'Password are not the same'),
                   );
-                } 
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (context) => successDialog(context),
+                  );
+                }
               },
               buttonText: 'Sign Up',
             ),
@@ -146,3 +151,22 @@ errorDialog(BuildContext context, String msg) {
   );
 }
 
+successDialog(BuildContext context) {
+  return AlertDialog(
+    title: const Text('Sign Up Success!'),
+    content: const Text('Data has been saved'),
+    actions: [
+      TextButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LoginScreen(),
+            ),
+          );
+        },
+        child: const Text('OK'),
+      )
+    ],
+  );
+}
