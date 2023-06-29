@@ -48,6 +48,7 @@ class HomeScreen extends StatelessWidget {
               postImage: 'lib/images/random-photos/6.jpg',
               postTime: '20 min ago',
               postDesc: 'Birthday week',
+              theme: prov.enableDarkMode,
             ),
             MyCard(
               accountName: 'New Jeans',
@@ -56,6 +57,7 @@ class HomeScreen extends StatelessWidget {
               postImage: 'lib/images/random-photos/29.jpg',
               postTime: '35 min ago',
               postDesc: 'NewJeans \'Zero\' Available Now',
+              theme: prov.enableDarkMode,
             ),
             MyCard(
               accountName: 'Toshiro Nishio',
@@ -64,6 +66,7 @@ class HomeScreen extends StatelessWidget {
               postImage: 'lib/images/random-photos/13.jpg',
               postTime: '50 min ago',
               postDesc: 'LB WORKS Ferrari F40 in Japan',
+              theme: prov.enableDarkMode,
             ),
             MyCard(
               accountName: 'Kitsune',
@@ -72,6 +75,7 @@ class HomeScreen extends StatelessWidget {
               postImage: 'lib/images/random-photos/14.jpg',
               postTime: '1 hour ago',
               postDesc: '#Kitsune',
+              theme: prov.enableDarkMode,
             ),
             MyCard(
               accountName: 'JISOO',
@@ -80,6 +84,7 @@ class HomeScreen extends StatelessWidget {
               postImage: 'lib/images/random-photos/7.jpg',
               postTime: '2 hours ago',
               postDesc: '久しぶりに日本でBLINKに会えて幸せでした！',
+              theme: prov.enableDarkMode,
             ),
           ],
         ),

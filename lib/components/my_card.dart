@@ -7,6 +7,7 @@ class MyCard extends StatelessWidget {
   final String postImage;
   final String postTime;
   final String postDesc;
+  final bool theme;
 
   const MyCard({
     super.key,
@@ -16,6 +17,7 @@ class MyCard extends StatelessWidget {
     required this.postImage,
     required this.postTime,
     required this.postDesc,
+    required this.theme,
   });
 
   @override
@@ -25,7 +27,7 @@ class MyCard extends StatelessWidget {
       height: 450,
       margin: EdgeInsets.symmetric(vertical: 15),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: theme ? Colors.grey.shade800 : Colors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
