@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_switch.dart';
 import 'package:hexagram/initial_screens/initial_screen.dart';
+import 'package:hexagram/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -10,24 +12,22 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  bool switch01 = false;
-  bool switch02 = false;
   bool switch03 = false;
   bool switch04 = false;
 
-  void toggleSwitch01(bool value) {
-    setState(() {
-      switch01 = !switch01;
-      switch02 = false;
-    });
-  }
+  // void toggleSwitch01(bool value) {
+  //   setState(() {
+  //     switch01 = !switch01;
+  //     switch02 = false;
+  //   });
+  // }
 
-  void toggleSwitch02(bool value) {
-    setState(() {
-      switch02 = !switch02;
-      switch01 = false;
-    });
-  }
+  // void toggleSwitch02(bool value) {
+  //   setState(() {
+  //     switch02 = !switch02;
+  //     switch01 = false;
+  //   });
+  // }
 
   void toggleSwitch03(bool value) {
     setState(() {
@@ -43,6 +43,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<ThemeProvider>(context);
+    String theme = prov.enableDarkMode ? "Dark_Mode" : "Light_Mode";
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -66,7 +68,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/paintbrush.png'),
+                  child:
+                      Image.asset('lib/images/icons/Dark_Mode/paintbrush.png'),
                 ),
                 Text(
                   'Theme',
@@ -80,19 +83,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 children: [
                   Row(
                     children: [
-                      MySwitch(
-                        switchText: 'Light Mode',
-                        switchFunc: toggleSwitch01,
-                        switchValue: switch01,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      MySwitch(
-                        switchText: 'Dark Mode',
-                        switchFunc: toggleSwitch02,
-                        switchValue: switch02,
+                      const Text('Dark Mode Theme'),
+                      Switch(
+                        value: prov.enableDarkMode,
+                        onChanged: (val) {
+                          prov.setBrightness = val;
+                        },
                       ),
                     ],
                   ),
@@ -105,7 +101,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/notification.png'),
+                  child: Image.asset(
+                      'lib/images/icons/Dark_Mode/notification.png'),
                 ),
                 Text(
                   'Notification',
@@ -135,7 +132,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/padlock.png'),
+                  child: Image.asset('lib/images/icons/Dark_Mode/padlock.png'),
                 ),
                 Text(
                   'Privacy',
@@ -165,7 +162,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/info.png'),
+                  child: Image.asset('lib/images/icons/Dark_Mode/info.png'),
                 ),
                 Text(
                   'Help',
@@ -179,7 +176,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/question.png'),
+                  child: Image.asset('lib/images/icons/Dark_Mode/question.png'),
                 ),
                 Text(
                   'About',

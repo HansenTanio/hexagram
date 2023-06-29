@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hexagram/provider/theme_provider.dart';
 import 'package:hexagram/screens/home_screen.dart';
 import 'package:hexagram/screens/post_screen.dart';
 import 'package:hexagram/screens/profile_screen.dart';
 import 'package:hexagram/screens/search_screen.dart';
 import 'package:hexagram/screens/settings_screen.dart';
+import 'package:provider/provider.dart';
 
 class LayoutScreen extends StatefulWidget {
   LayoutScreen({
@@ -33,6 +35,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<ThemeProvider>(context);
     return Scaffold(
       body: Center(
         child: _body[_currentIndex],
@@ -44,11 +47,11 @@ class _LayoutScreenState extends State<LayoutScreen> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         unselectedIconTheme: IconThemeData(
-          color: Colors.black,
+          color: prov.enableDarkMode ? Colors.white : Colors.black,
           size: 25,
         ),
         selectedIconTheme: IconThemeData(
-          color: Colors.black,
+          color: prov.enableDarkMode ? Colors.white : Colors.black,
           size: 35,
         ),
         items: const <BottomNavigationBarItem>[
