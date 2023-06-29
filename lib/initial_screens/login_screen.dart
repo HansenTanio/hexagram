@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_button.dart';
 import 'package:hexagram/components/my_textfield.dart';
 import 'package:hexagram/initial_screens/signup_screen.dart';
+import 'package:hexagram/provider/account_provider.dart';
 import 'package:hexagram/responsive/layout_screen.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
@@ -12,9 +14,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  void userLogin() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LayoutScreen()));
+  @override
+  void initState() {
+    Future.microtask(() {
+      Provider.of<AccountProvider>(context, listen: false).initialData();
+    });
+    super.initState();
   }
 
   final usernameController = TextEditingController();
@@ -24,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<AccountProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -110,7 +116,22 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20,
             ),
             MyButton(
-              onTap: userLogin,
+              onTap: () {
+                prov.login(usernameController.text, passwordController.text);
+                if (prov.data == null) {
+                  showDialog(
+                    context: context,
+                    builder: (context) => errorDialog(context),
+                  );
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LayoutScreen(),
+                    ),
+                  );
+                }
+              },
               buttonText: 'Login',
             ),
             SizedBox(
@@ -148,4 +169,19 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+}
+
+errorDialog(BuildContext context) {
+  return AlertDialog(
+    title: const Text('Login Error!'),
+    content: const Text('Account not found'),
+    actions: [
+      TextButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Text('OK'),
+      )
+    ],
+  );
 }
