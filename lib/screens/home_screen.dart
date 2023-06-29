@@ -69,44 +69,28 @@ cardList(BuildContext context) {
   if (cardProv.data == null) {
     return Center(child: const Text('Tidak ada Data'));
   } else {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              MyAvatar(
-                userName: 'Hansen',
-                imagePath: 'lib/images/profile/Hansen Profile.jpg',
-              ),
-              MyAvatar(
-                userName: 'Louis',
-                imagePath: 'lib/images/profile/Louis Profile.jpg',
-              ),
-              MyAvatar(
-                userName: 'Victor',
-                imagePath: 'lib/images/profile/Victor Profile.jpg',
-              ),
-            ],
-          ),
-          ListView(
-            children: List.generate(
-              cardProv.card['data']!.length,
-              (index) {
-                var item = cardProv.card['data']![index];
-                return MyCard(
+    return Column(
+      children: [
+        ListView(
+          shrinkWrap: true,
+          children: List.generate(
+            cardProv.card['data']!.length,
+            (index) {
+              var item = cardProv.card['data']![index];
+              return Center(
+                child: MyCard(
                   profileImage: item['profileImage'].toString(),
                   accountName: item['accountName'].toString(),
                   account: item['account'].toString(),
                   postImage: item['postImage'].toString(),
                   postTime: item['postTime'].toString(),
                   postDesc: item['postDesc'].toString(),
-                );
-              },
-            ),
-          )
-        ],
-      ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
