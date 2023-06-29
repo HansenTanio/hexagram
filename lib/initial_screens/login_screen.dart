@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 70,
             ),
             Image.asset(
-              "lib/images/hexagram.png",
+              "lib/images/light_hexagram.png",
             ),
             SizedBox(
               height: 20,

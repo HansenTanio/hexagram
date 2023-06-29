@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_previewphoto.dart';
+import 'package:hexagram/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<ThemeProvider>(context);
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: prov.enableDarkMode ? null : Colors.white,
           elevation: 0,
           title: Text(
             'Profile',
-            style: TextStyle(color: Colors.black, fontSize: 25),
+            style: TextStyle(
+              color: prov.enableDarkMode ? null : Colors.black,
+              fontSize: 25,
+            ),
           ),
           centerTitle: true,
           iconTheme: IconThemeData(
-            color: Colors.black,
+            color: prov.enableDarkMode ? null : Colors.black,
           ),
           actions: [
             Container(

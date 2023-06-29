@@ -50,7 +50,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 50,
             ),
             Image.asset(
-              "lib/images/hexagram.png",
+              "lib/images/light_hexagram.png",
             ),
             SizedBox(
               height: 20,

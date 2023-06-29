@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_switch.dart';
 import 'package:hexagram/components/my_textfield.dart';
+import 'package:hexagram/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class PostScreen extends StatefulWidget {
   const PostScreen({super.key});
@@ -50,21 +52,25 @@ class _PostScreenState extends State<PostScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
         leading: Icon(
           Icons.close,
           size: 30,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: prov.enableDarkMode ? null : Colors.white,
         elevation: 0,
         title: Text(
           'New Post',
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(
+            color: prov.enableDarkMode ? null : Colors.black,
+            fontSize: 25,
+          ),
         ),
         centerTitle: true,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: prov.enableDarkMode ? null : Colors.black,
         ),
         actions: [
           Container(

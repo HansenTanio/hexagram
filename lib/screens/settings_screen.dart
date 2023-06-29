@@ -47,15 +47,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
     String theme = prov.enableDarkMode ? "Dark_Mode" : "Light_Mode";
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: prov.enableDarkMode ? null : Colors.white,
         elevation: 0,
         title: Text(
           'Settings',
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(
+              color: prov.enableDarkMode ? null : Colors.black, fontSize: 25),
         ),
         centerTitle: true,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: prov.enableDarkMode ? null : Colors.black,
         ),
         automaticallyImplyLeading: false,
       ),

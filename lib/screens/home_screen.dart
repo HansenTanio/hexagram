@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_avatar.dart';
 import 'package:hexagram/components/my_card.dart';
+import 'package:hexagram/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<ThemeProvider>(context);
+    String theme = prov.enableDarkMode ? 'dark' : 'light';
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
+        backgroundColor: prov.enableDarkMode ? null : Colors.white,
         title: Image.asset(
-          "lib/images/hexagram.png",
+          "lib/images/${theme}_hexagram.png",
           height: 50,
-        ),
-        iconTheme: IconThemeData(
-          color: Colors.black,
         ),
         automaticallyImplyLeading: false,
       ),
