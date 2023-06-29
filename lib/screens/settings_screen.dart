@@ -69,7 +69,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child:
-                      Image.asset('lib/images/icons/Dark_Mode/paintbrush.png'),
+                      Image.asset('lib/images/icons/${theme}/paintbrush.png'),
                 ),
                 Text(
                   'Theme',
@@ -101,8 +101,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset(
-                      'lib/images/icons/Dark_Mode/notification.png'),
+                  child:
+                      Image.asset('lib/images/icons/${theme}/notification.png'),
                 ),
                 Text(
                   'Notification',
@@ -132,7 +132,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/Dark_Mode/padlock.png'),
+                  child: Image.asset('lib/images/icons/${theme}/padlock.png'),
                 ),
                 Text(
                   'Privacy',
@@ -162,7 +162,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/Dark_Mode/info.png'),
+                  child: Image.asset('lib/images/icons/${theme}/info.png'),
                 ),
                 Text(
                   'Help',
@@ -176,7 +176,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   width: 40,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Image.asset('lib/images/icons/Dark_Mode/question.png'),
+                  child: Image.asset('lib/images/icons/${theme}/question.png'),
                 ),
                 Text(
                   'About',

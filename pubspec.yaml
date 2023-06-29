@@ -57,8 +57,8 @@ flutter:
     - lib/images/
     - lib/images/profile/
     - lib/images/random-photos/
-    - lib/images/icons/Light_Mode
-    - lib/images/icons/Dark_Mode
+    - lib/images/icons/Light_Mode/
+    - lib/images/icons/Dark_Mode/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
