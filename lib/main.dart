@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexagram/initial_screens/initial_screen.dart';
 import 'package:hexagram/provider/theme_provider.dart';
 import 'package:hexagram/provider/account_provider.dart';
+import 'package:hexagram/provider/card_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -12,7 +13,10 @@ void main() {
           create: (_) => AccountProvider(),
         ),
         ChangeNotifierProvider(
-          create: (_) => ThemeProvider(),
+          create: (_) => ThemeProvider(),  
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CardProvider(),
         ),
       ],
       child: const MyApp(),
