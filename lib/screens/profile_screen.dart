@@ -2,23 +2,30 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hexagram/components/my_previewphoto.dart';
+import 'package:hexagram/provider/account_provider.dart';
+import 'package:hexagram/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<AccountProvider>(context);
+    final themeProv = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: themeProv.enableDarkMode ? null : Colors.white,
         elevation: 0,
         title: Text(
           'Profile',
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(
+              color: themeProv.enableDarkMode ? null : Colors.black,
+              fontSize: 25),
         ),
         centerTitle: true,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: themeProv.enableDarkMode ? null : Colors.black,
         ),
         actions: [
           Container(
@@ -40,24 +47,23 @@ class ProfileScreen extends StatelessWidget {
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   CircleAvatar(
-                    backgroundImage:
-                        AssetImage('lib/images/profile/Hansen Profile.jpg'),
+                    backgroundImage: AssetImage(prov.data['data']['profil']),
                     radius: 50,
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
-                    'Hansen Tanio',
+                    prov.data['data']['nama'],
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    '@hansentanio33',
+                    '@${prov.data['data']['username']}',
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.grey,
@@ -102,7 +108,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '77.5k',
+                        (Random().nextInt(700) + 200).toString(),
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -121,7 +127,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '500',
+                        (Random().nextInt(500) + 200).toString(),
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -175,32 +181,37 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Row(
-              children: [
-                MySearchPhoto(imageLink: 'lib/images/random-photos/1.jpg'),
-                MySearchPhoto(imageLink: 'lib/images/random-photos/25.jpg'),
-                MySearchPhoto(imageLink: 'lib/images/random-photos/48.jpg'),
-                MySearchPhoto(imageLink: 'lib/images/random-photos/11.jpg'),
-              ],
-            ),
-            Row(
-              children: [
-                MySearchPhoto(imageLink: 'lib/images/random-photos/4.jpg'),
-                MySearchPhoto(imageLink: 'lib/images/random-photos/19.jpg'),
-                MySearchPhoto(imageLink: 'lib/images/random-photos/9.jpg'),
-                MySearchPhoto(imageLink: 'lib/images/random-photos/18.jpg'),
-              ],
-            ),
-            // Row(
-            //   children: [
-            //     MySearchPhoto(
-            //       imageLink: item,
-            //     ),
-            //   ],
-            // ));
+            photoList(context)
           ],
         ),
       ),
+    );
+  }
+}
+
+photoList(BuildContext context) {
+  final prov = Provider.of<AccountProvider>(context);
+  if (prov.data == null) {
+    return Center(child: const Text('Tidak ada Data'));
+  } else {
+    return Column(
+      children: [
+        GridView.count(
+          crossAxisCount: 4,
+          shrinkWrap: true,
+          children: List.generate(
+            prov.data['data']['photo']!.length,
+            (index) {
+              var item = prov.data['data']['photo']![index];
+              return Center(
+                child: MySearchPhoto(
+                  imageLink: item,
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

@@ -15,20 +15,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool switch03 = false;
   bool switch04 = false;
 
-  // void toggleSwitch01(bool value) {
-  //   setState(() {
-  //     switch01 = !switch01;
-  //     switch02 = false;
-  //   });
-  // }
-
-  // void toggleSwitch02(bool value) {
-  //   setState(() {
-  //     switch02 = !switch02;
-  //     switch01 = false;
-  //   });
-  // }
-
   void toggleSwitch03(bool value) {
     setState(() {
       switch03 = !switch03;
@@ -187,6 +173,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             TextButton(
               onPressed: () {
+                prov.setBrightness = false;
                 Navigator.push(
                   context,
                   MaterialPageRoute(
